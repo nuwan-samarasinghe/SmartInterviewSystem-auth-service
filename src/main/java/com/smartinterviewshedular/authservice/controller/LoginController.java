@@ -18,5 +18,9 @@ public class LoginController {
         return "register";
     }
 
+    @GetMapping("/forgot-password")
+    String forgotPassword() {
+        return "forgot-password";
+    }
 
 }
