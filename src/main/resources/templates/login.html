@@ -6,69 +6,81 @@
     <title>Smart Interview System | oauth2 login</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/webjars/bootstrap/css/bootstrap.min.css"
+    <!--<link href="/webjars/bootstrap/css/bootstrap.min.css"
           th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
           rel="stylesheet" media="screen"/>
     <script src="/webjars/jquery/jquery.min.js"
-            th:src="@{/webjars/jquery/jquery.min.js}"></script>
+            th:src="@{/webjars/jquery/jquery.min.js}"></script>-->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="card">
+<div class="container pt-5">
+    <div class="card">
 
-            <h5 class="card-header info-color white-text text-center py-4">
-                <strong>Sign in</strong>
-            </h5>
+        <h5 class="card-header info-color white-text text-center py-4">
+            <strong>Sign in</strong>
+        </h5>
 
-            <div class="card-body px-lg-5 pt-0">
+        <div class="card-body px-lg-5 pt-5">
 
-                <form class="md-form" style="color: #33b5e5;" th:action="@{/login}" method="post">
+            <div class="row">
+                <div class="col-5">
+                    <img src="images/virtusa.jpeg">
+                </div>
+                <div class="col-md-7">
+                    <form class="md-form" style="color: #192c34;" th:action="@{/login}" method="post">
 
-                    <input type="text" id="materialLoginFormEmail" name="username" class="form-control">
-                    <label for="materialLoginFormEmail">User Name</label>
+                        <label for="materialLoginFormEmail">User Name</label>
+                        <input type="text" id="materialLoginFormEmail" name="username" class="form-control">
 
+                        <label for="materialLoginFormPassword">Password</label>
+                        <input type="password" id="materialLoginFormPassword" name="password" class="form-control">
 
-                    <input type="password" id="materialLoginFormPassword" name="password" class="form-control">
-                    <label for="materialLoginFormPassword">Password</label>
-
-
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="materialLoginFormRemember">
-                            <label class="form-check-label" for="materialLoginFormRemember">Remember me</label>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="materialLoginFormRemember">
+                                <label class="form-check-label" for="materialLoginFormRemember">Remember me</label>
+                            </div>
+                            <div>
+                                <a th:href="@{/forgot-password}">Forgot password?</a>
+                            </div>
                         </div>
-                        <div>
-                            <a th:href="@{/forgot-password}">Forgot password?</a>
+
+
+                        <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
+                                type="submit">
+                            Sign in
+                        </button>
+
+                        <div class="text-center">
+                            <p>Not a member?
+                                <a th:href="@{/register}">Register</a>
+                            </p>
+
+                            <p>or sign in with:</p>
+                            <a type="button" class="btn-floating btn-fb btn-sm">
+                                <i class="fa fa-microsoft"></i>
+                            </a>
+                            <a type="button" class="btn-floating btn-tw btn-sm">
+                                <i class="fa fa-google"></i>
+                            </a>
                         </div>
-                    </div>
-
-
-                    <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">
-                        Sign in
-                    </button>
-
-                    <div class="text-center">
-                        <p>Not a member?
-                            <a th:href="@{/register}">Register</a>
-                        </p>
-
-                        <p>or sign in with:</p>
-                        <a type="button" class="btn-floating btn-fb btn-sm">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a type="button" class="btn-floating btn-tw btn-sm">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a type="button" class="btn-floating btn-li btn-sm">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a type="button" class="btn-floating btn-git btn-sm">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>

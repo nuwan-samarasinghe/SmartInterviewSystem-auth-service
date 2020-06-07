@@ -22,7 +22,7 @@ public class AuthWebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/webjars/**", "/register", "/forgot-password").permitAll()
+                .antMatchers("/webjars/**", "/register", "/forgot-password" , "/images/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login").permitAll();

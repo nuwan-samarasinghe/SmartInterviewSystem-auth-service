@@ -31,3 +31,13 @@ INSERT INTO ROLE_USER (ROLE_ID, USER_ID)
     (1, 1) /* saman-admin */,
     (2, 2) /* kamal-operatorr */ ;
 
+### need to call the auth service using the following 
+security:
+  oauth2:
+    client:
+      client-id: mobile
+      client-secret: pin
+      user-authorization-uri: http://localhost:8185/oauth/authorize
+      access-token-uri: http://localhost:8185/oauth/token
+    resource:
+      token-info-uri: http://localhost:8185/oauth/check_token
