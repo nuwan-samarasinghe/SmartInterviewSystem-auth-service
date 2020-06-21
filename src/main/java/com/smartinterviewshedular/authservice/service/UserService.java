@@ -17,6 +17,8 @@ import java.util.Optional;
 @Service
 public class UserService {
 
+    // 2, 3, 6, 7, 8, 12, 13, 14, 17, 20, 25, 26, 28
+
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 

@@ -36,10 +36,12 @@
 
             <div class="row">
                 <div class="col-5">
-                    <img src="images/virtusa.jpeg">
+
                 </div>
                 <div class="col-md-7">
                     <form class="md-form" style="color: #192c34;" th:action="@{/login}" method="post">
+
+                        <label th:value="${#request.getParameter('error')}"></label>
 
                         <label for="materialLoginFormEmail">User Name</label>
                         <input type="text" id="materialLoginFormEmail" name="username" class="form-control">

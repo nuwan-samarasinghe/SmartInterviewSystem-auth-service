@@ -25,7 +25,7 @@ public class AuthWebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/webjars/**", "/register", "/forgot-password" , "/images/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin().loginPage("/login").permitAll();
+                .formLogin().loginPage("/login").failureUrl("/login?error=true").permitAll();
     }
 
     @Bean
