@@ -1,7 +1,6 @@
 package com.smartinterviewshedular.authservice.service;
 
 import com.smartinterviewshedular.authservice.repository.UserRepository;
-import com.smartinterviewshedular.commonlib.auth.model.Permission;
 import com.smartinterviewshedular.commonlib.auth.model.Role;
 import com.smartinterviewshedular.commonlib.auth.model.User;
 import com.smartinterviewshedular.commonlib.auth.model.UserRoleType;
@@ -10,14 +9,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Optional;
 
 @Service
 public class UserService {
-
-    // 2, 3, 6, 7, 8, 12, 13, 14, 17, 20, 25, 26, 28
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
