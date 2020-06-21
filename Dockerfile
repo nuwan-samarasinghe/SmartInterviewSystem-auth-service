@@ -10,4 +10,4 @@ COPY "/target/auth-service-0.0.1-SNAPSHOT.jar" "/usr/app/"
 WORKDIR "/usr/app"
 
 # Run the jar file
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","auth-service-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-Dspring.profiles.active=dev","-jar","auth-service-0.0.1-SNAPSHOT.jar"]
